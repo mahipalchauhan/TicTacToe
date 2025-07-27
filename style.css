@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #e0f2f1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  background-color: #004d40;
+  color: white;
+  height: 60px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  font-weight: bold;
+}
+
+.gamecontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(3, 10vw);
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.box {
+  border: 2px solid #222;
+  font-size: 7vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.box:hover {
+  background-color: #b2dfdb;
+}
+
+.boxtext {
+  transition: transform 0.2s ease;
+}
+
+.boxtext:hover {
+  transform: scale(1.2);
+}
+
+.br-0 {
+  border-right: 0;
+}
+
+.bl-0 {
+  border-left: 0;
+}
+
+.bt-0 {
+  border-top: 0;
+}
+
+.bb-0 {
+  border-bottom: 0;
+}
+
+.line {
+  background-color: #00796b;
+  width: 0;
+  height: 4px;
+  position: absolute;
+  transition: width 0.5s ease-in-out;
+}
+
+.gameinfo {
+  padding: 0 20px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.gameinfo h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00695c;
+}
+
+.info {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
+#reset {
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #80cbc4;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#reset:hover {
+  background-color: #004d40;
+  color: white;
+  transform: scale(1.05);
+}
+
+.imgbox img {
+  width: 0;
+  transition: width 0.5s ease-in-out;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .gamecontainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .container {
+    grid-template-rows: repeat(3, 20vw);
+    grid-template-columns: repeat(3, 20vw);
+  }
+
+  .gameinfo {
+    font-size: 1.5rem;
+  }
+}
