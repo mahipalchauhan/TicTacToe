@@ -44,8 +44,8 @@ nav li {
 
 .container {
   display: grid;
-  grid-template-rows: repeat(3, 10vw);
-  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(3, 13vw);
+  grid-template-columns: repeat(3, 13vw);
   position: relative;
   background-color: #ffffff;
   border-radius: 12px;
@@ -75,28 +75,41 @@ nav li {
   transform: scale(1.2);
 }
 
-.br-0 {
-  border-right: 0;
-}
-
-.bl-0 {
-  border-left: 0;
-}
-
-.bt-0 {
-  border-top: 0;
-}
-
-.bb-0 {
-  border-bottom: 0;
-}
+.br-0 { border-right: 0; }
+.bl-0 { border-left: 0; }
+.bt-0 { border-top: 0; }
+.bb-0 { border-bottom: 0; }
 
 .line {
-  background-color: #00796b;
+  background-color: #022c27;
   width: 0;
   height: 4px;
   position: absolute;
+  top: 0;
+  left: 0;
   transition: width 0.5s ease-in-out;
+  border-radius: 4px;
+}
+
+
+.imgbox img {
+  width: 0;
+  margin-top: 15px;
+  transition: width 0.5s ease-in-out;
+}
+
+.imgbox img.animate {
+  width: 120px !important;
+  animation: bounce 1.2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 .gameinfo {
@@ -113,7 +126,18 @@ nav li {
 
 .info {
   font-size: 24px;
-  color: #333;
+  background-color: #e0f2f1;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #00695c;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+#winnerText {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #00796b;
   font-weight: bold;
 }
 
@@ -135,25 +159,21 @@ nav li {
   transform: scale(1.05);
 }
 
-.imgbox img {
-  width: 0;
-  transition: width 0.5s ease-in-out;
-  margin-top: 15px;
-}
-
-@media screen and (max-width: 800px) {
-  .gamecontainer {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
+@media screen and (max-width: 600px) {
   .container {
-    grid-template-rows: repeat(3, 20vw);
-    grid-template-columns: repeat(3, 20vw);
+    grid-template-columns: repeat(3, 30vw);
+    grid-template-rows: repeat(3, 30vw);
   }
 
-  .gameinfo {
+  .info {
+    font-size: 20px;
+  }
+
+  #reset {
+    padding: 8px 16px;
+  }
+
+  .gameinfo h1 {
     font-size: 1.5rem;
   }
 }
